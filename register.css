@@ -1,2 +1,4 @@
 body { background-color: #22252A;}
-body div { text-align: center; color: whitesmoke; }
+body div { text-align: center; color: whitesmoke; margin-bottom: 40px;}
+#mainText { font-size: 60px; margin-top: 10%;}
+#mainCheckbox input { margin-bottom: 5px;}
