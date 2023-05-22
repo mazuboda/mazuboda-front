@@ -4,7 +4,7 @@
 
 /* my css */
 /* 메인 영역 1920*1080 배경색 설정  */
-main{
+body{
   background-color: beige;
   width: 1920px;
   height: 1080px;
@@ -24,8 +24,17 @@ main{
 
 /* 메인 우측 아이템 가운데 정렬, 배경색 설정 */
 .mainRight {
+  width: 50%;
+  height: 100%;
   text-align: center;
   background-color: gray;
+}
+
+.mainRightItem{
+  width: 500px;
+  height: 100px;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 
