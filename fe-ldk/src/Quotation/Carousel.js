@@ -84,16 +84,13 @@ function Carousel() {
             {/* End of 캐러셀 바디 */}
             {/* 캐러셀 푸터 */}
             <MobileStepper
-                style={{
-                    width: '100%',
-                    height: '100px',
-                }}
+                style={{width:'50%', height:'50px',  backgroundColor:'black'}}
                 steps={maxSteps}
-                position="static"
+                // position="static"
                 activeStep={activeStep}
                 nextButton={
                     <Button
-                        size="medium"
+                        size="small"
                         onClick={handleNext}
                         disabled={activeStep === maxSteps - 1}
                     >
