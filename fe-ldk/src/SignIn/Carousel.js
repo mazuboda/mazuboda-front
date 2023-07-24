@@ -7,7 +7,6 @@ import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
 import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
-import SCHLikeLion from './logo.jpg'
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -15,7 +14,7 @@ const images = [
     {
         label: 'San Francisco – Oakland Bay Bridge, United States',
         imgPath:
-            SCHLikeLion,
+            'https://images.unsplash.com/photo-1537944434965-cf4679d1a598?auto=format&fit=crop&w=400&h=250&q=60',
     },
     {
         label: '',
@@ -53,7 +52,7 @@ function Carousel() {
 
     return (
         // 캐러셀 너비 조정 maxWidth
-        <Box sx={{ maxHeight: '100%', maxWidth: '50%', flexGrow: 1 }}>
+        <Box sx={{ maxHeight: '100%', maxWidth: '100%', flexGrow: 1 }}>
             {/* 캐러셀 바디 */}
             <AutoPlaySwipeableViews
                 axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
@@ -84,7 +83,7 @@ function Carousel() {
             {/* End of 캐러셀 바디 */}
             {/* 캐러셀 푸터 */}
             <MobileStepper
-                style={{width:'50%', height:'50px',  backgroundColor:'#FFE9E9', color:'white'}}
+                style={{width:'100%', height:'50px',  backgroundColor:'#FFE9E9', color:'white'}}
                 steps={maxSteps}      
                 // position="static"
                 activeStep={activeStep}
