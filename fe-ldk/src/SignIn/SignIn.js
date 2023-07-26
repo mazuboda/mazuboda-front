@@ -63,6 +63,7 @@ const SignIn = () => {
                 <Header>마주보다<HeaderHorizon /></Header>
                 
                 <KakaoApi>카카오 API</KakaoApi>
+                
                 <Carousel></Carousel>
             </PageContainer>
         </>
