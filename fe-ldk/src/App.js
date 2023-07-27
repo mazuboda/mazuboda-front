@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path="/" element={<SignUpSelect />} />
+        <Route path="/" element={<Quotation />} />
         <Route path="/UploadComplete" element={<UploadComplete />} />
         <Route path="/Quotation" element={<Quotation />} />
         <Route path="/SignUpSelect" element={<SignUpSelect />} />

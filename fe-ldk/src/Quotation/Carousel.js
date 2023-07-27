@@ -8,6 +8,7 @@ import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
 import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import SCHLikeLion from './logo.jpg'
+import styled from 'styled-components';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -34,6 +35,11 @@ const images = [
     },
 ];
 
+const CarouselContainer = styled.div`
+    width:100%;
+    height:100%;
+`;
+
 function Carousel() {
     const theme = useTheme();
     const [activeStep, setActiveStep] = React.useState(0);
@@ -54,19 +60,21 @@ function Carousel() {
     return (
         // 캐러셀 너비 조정 maxWidth
         <Box sx={{ maxHeight: '100%', maxWidth: '50%', flexGrow: 1 }}>
-            {/* 캐러셀 바디 */}
-            <AutoPlaySwipeableViews
-                axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-                index={activeStep}
-                onChangeIndex={handleStepChange}
-                enableMouseEvents
-                className='h-100'
-            >
-                {images.map((step, index) => (
-                    <div key={step.label} className='h-100'>
-                        {Math.abs(activeStep - index) <= 2 ? (
-                            // 이미지 박스
-                            <Box
+            {/* 캐러셀 컨테이너 */}
+            <CarouselContainer>
+                {/* 캐러셀 바디 */}
+                <AutoPlaySwipeableViews
+                    axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+                    index={activeStep}
+                    onChangeIndex={handleStepChange}
+                    enableMouseEvents
+                    className='h-100'
+                    >
+                    {images.map((step, index) => (
+                        <div key={step.label} className='h-100'>
+                            {Math.abs(activeStep - index) <= 2 ? (
+                                // 이미지 박스
+                                <Box
                                 component="img"
                                 sx={{
                                     height: '1080px',
@@ -76,44 +84,46 @@ function Carousel() {
                                 }}
                                 src={step.imgPath}
                                 alt={step.label}
-                            />
-                        ) : null}
-                    </div>
-                ))}
-            </AutoPlaySwipeableViews>
-            {/* End of 캐러셀 바디 */}
-            {/* 캐러셀 푸터 */}
-            <MobileStepper
-                style={{width:'50%', height:'50px',  backgroundColor:'#FFE9E9', color:'white'}}
-                steps={maxSteps}      
-                // position="static"
-                activeStep={activeStep}
-                nextButton={
-                    <Button
+                                />
+                                ) : null}
+                        </div>
+                    ))}
+                </AutoPlaySwipeableViews>
+                {/* End of 캐러셀 바디 */}
+                {/* 캐러셀 푸터 */}
+                <MobileStepper
+                    style={{ width: '50%', height: '50px', backgroundColor: '#FFE9E9', color: 'white', position:'absolute', bottom:'0'}}
+                    steps={maxSteps}
+                    // position="static"
+                    activeStep={activeStep}
+                    nextButton={
+                        <Button
                         size="small"
                         onClick={handleNext}
                         disabled={activeStep === maxSteps - 1}
-                    >
-                        Next
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowLeft />
-                        ) : (
-                            <KeyboardArrowRight />
-                        )}
-                    </Button>
-                }
-                backButton={
-                    <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
-                        {theme.direction === 'rtl' ? (
-                            <KeyboardArrowRight />
-                        ) : (
-                            <KeyboardArrowLeft />
-                        )}
-                        Back
-                    </Button>
-                }
-            />
-            {/* End of 캐러셀 푸터 */}
+                        >
+                            Next
+                            {theme.direction === 'rtl' ? (
+                                <KeyboardArrowLeft />
+                                ) : (
+                                    <KeyboardArrowRight />
+                                    )}
+                        </Button>
+                    }
+                    backButton={
+                        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                            {theme.direction === 'rtl' ? (
+                                <KeyboardArrowRight />
+                                ) : (
+                                    <KeyboardArrowLeft />
+                                    )}
+                            Back
+                        </Button>
+                    }
+                    />
+                {/* End of 캐러셀 푸터 */}
+            </CarouselContainer>
+            {/* end of 캐러셀 컨테이너 */}
         </Box>
     );
 }
