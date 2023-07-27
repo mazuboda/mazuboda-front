@@ -36,8 +36,7 @@ const images = [
 ];
 
 const CarouselContainer = styled.div`
-    width:100%;
-    height:100%;
+    position:relative;
 `;
 
 function Carousel() {
@@ -47,10 +46,12 @@ function Carousel() {
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
+        if (activeStep===maxSteps){ setActiveStep(0); }
     };
-
+    
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1);
+        if (activeStep===0){ setActiveStep(maxSteps-1); }
     };
 
     const handleStepChange = (step) => {
@@ -92,7 +93,7 @@ function Carousel() {
                 {/* End of 캐러셀 바디 */}
                 {/* 캐러셀 푸터 */}
                 <MobileStepper
-                    style={{ width: '50%', height: '50px', backgroundColor: '#FFE9E9', color: 'white', position:'absolute', bottom:'0'}}
+                    style={{ width: '100%', height: '50px', backgroundColor: '#FFE9E9', color: 'white', position:'absolute', bottom:'0'}}
                     steps={maxSteps}
                     // position="static"
                     activeStep={activeStep}
@@ -100,7 +101,6 @@ function Carousel() {
                         <Button
                         size="small"
                         onClick={handleNext}
-                        disabled={activeStep === maxSteps - 1}
                         >
                             Next
                             {theme.direction === 'rtl' ? (
@@ -111,7 +111,7 @@ function Carousel() {
                         </Button>
                     }
                     backButton={
-                        <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+                        <Button size="small" onClick={handleBack}>
                             {theme.direction === 'rtl' ? (
                                 <KeyboardArrowRight />
                                 ) : (
