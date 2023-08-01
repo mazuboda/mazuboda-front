@@ -33,6 +33,7 @@ const SignUpCompany = () => {
         <Carousel></Carousel>
         <StyledButton>업로드</StyledButton><br/>
         <StyledButton>대표 이미지 설정</StyledButton>
+        <Button className='w-full'>테스트</Button>
         </Container>
         </>
     );

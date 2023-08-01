@@ -56,29 +56,29 @@ const InputGroup = () => {
                     {/* 1행 */}
                     <div className='row'>
                         {/* <InputLabel for="TITLE">ex) 큐티뽀짝 레터링케이꾸</InputLabel> */}
-                        <Inputitem placeholder='제목' className='col' id='TITLE'/>
+                        <Inputitem placeholder='제목' className='col' id='TITLE' required/>
                     </div>
                     {/* 2행 */}
                     <div className='row'>
                         {/* <InputLabel for="PRICE">ex) 오억</InputLabel> */}
-                        <Inputitem placeholder='가격' className='col me-3' />
+                        <Inputitem placeholder='가격' className='col me-3' required />
                         {/* <InputLabel for="QUANTITY">ex) 백만개</InputLabel> */}
-                        <Inputitem placeholder='수량' className='col' />
+                        <Inputitem placeholder='수량' className='col' required />
                     </div>
                     {/* 3행 */}
                     <div className='row'>
                         {/* <InputLabel for="ZIPCODE">ex) </InputLabel> */}
-                        <Inputitem placeholder='우편번호' className='col' />
+                        <Inputitem placeholder='우편번호' className='col' required />
                     </div>
                     {/* 4행 */}
                     <div className='row'>
                         {/* <InputLabel for="DETAILEDADDRESS">ex) </InputLabel> */}
-                        <Inputitem placeholder='상세주소' className='col' />
+                        <Inputitem placeholder='상세주소' className='col' required />
                     </div>
                     {/* 5행 */}
                     <div className='row'>
                         {/* <InputLabel for="EXPLANATION">ex) 생크림을 윗면 둘레로 윗면에 나루토와 사스케 싸움 그림과 가슴이 웅장해진다 텍스트</InputLabel> */}
-                        <TextArea placeholder='설명' className='col' />
+                        <TextArea placeholder='설명' className='col' required />
                     </div>
 
                     <div className='row'>
