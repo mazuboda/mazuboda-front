@@ -5,9 +5,9 @@ import { Link } from "react-router-dom";
 
 const StyledHeader = styled.div`
   // 위치
-  position: absolute;
+  /* position: absolute;
   top: 0;
-  z-index: 1;
+  z-index: 1; */
   // 정렬
   text-align: center;
   // 크기

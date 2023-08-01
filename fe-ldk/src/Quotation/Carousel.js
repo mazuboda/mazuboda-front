@@ -60,7 +60,7 @@ function Carousel() {
 
     return (
         // 캐러셀 너비 조정 maxWidth
-        <Box sx={{ maxHeight: '100%', maxWidth: '50%', flexGrow: 1 }}>
+        <Box sx={{ maxHeight: '960px', maxWidth: '50%', flexGrow: 1 }}>
             {/* 캐러셀 컨테이너 */}
             <CarouselContainer>
                 {/* 캐러셀 바디 */}
@@ -78,7 +78,7 @@ function Carousel() {
                                 <Box
                                 component="img"
                                 sx={{
-                                    height: '1080px',
+                                    height: '960px',
                                     display: 'block',
                                     overflow: 'hidden',
                                     width: '100%',

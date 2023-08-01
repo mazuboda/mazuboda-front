@@ -19,9 +19,8 @@ const InputLabel = styled.label`
 `;
 
 const InputContainer = styled.div`
-    padding:10%;
-    padding-top:5%;
-    padding-bottom:5%;
+    padding: 2% 10% 1% 10%;
+
 `;
 
 const TextArea = styled.textarea`
@@ -49,6 +48,7 @@ const Button = styled.input`
 `;
 
 const InputGroup = () => {
+
     return (
         <>
             <InputContainer className='container'>
@@ -84,7 +84,7 @@ const InputGroup = () => {
 
                     <div className='row'>
                         <Link to='/UploadComplete'>
-                        <Button type='submit' value='신청하기' className='col' ></Button>
+                        <Button type='submit' value='신청하기' className='col' onClick={onclick} ></Button>
                         </Link>
                     </div>
                 </form>
