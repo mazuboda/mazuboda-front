@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 
@@ -82,7 +83,9 @@ const InputGroup = () => {
                     </div>
 
                     <div className='row'>
+                        <Link to='/UploadComplete'>
                         <Button type='submit' value='신청하기' className='col' ></Button>
+                        </Link>
                     </div>
                 </form>
             </InputContainer>

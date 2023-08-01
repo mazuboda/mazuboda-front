@@ -3,16 +3,20 @@ import styled from '@emotion/styled';
 
 const StyledHeader = styled.div`
     // 위치
+    position:absolute;
+    top:0;
+    z-index:1;
     // 정렬
     text-align:center;
     // 크기
     width:100%;
     padding:2%;
     // 디자인
-    background-color:transparent;
-    opacity:0.9;
+    background-color:#B76464;
+    opacity:1;
     font-weight:bold;
     font-size:50px;
+    color:white;
 `;
 
 const StyledHeaderHorizon = styled.hr`
@@ -22,7 +26,7 @@ const StyledHeaderHorizon = styled.hr`
     margin-left:auto;
     margin-right:auto;
     // 디자인
-    background-color:black;
+    background-color:white;
 `;
 
 const Header = () => {
