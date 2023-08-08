@@ -1,1 +1,2 @@
 # mazuboda-front
+test
