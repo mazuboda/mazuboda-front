@@ -46,7 +46,7 @@ function Carousel() {
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1);
-        if (activeStep===maxSteps){ setActiveStep(0); }
+        if (activeStep===maxSteps-1){ setActiveStep(0); }
     };
     
     const handleBack = () => {
